@@ -15,7 +15,7 @@ import java.util.TimerTask;
 
 import java.util.Timer;
 
-public class mov2 extends Animaciones {
+public class VentanaJuego extends Animaciones {
 
 	protected static final int KeyEvent = 0;
 
@@ -30,7 +30,7 @@ public class mov2 extends Animaciones {
 	public int contador;
 	public int z = 0;
 
-	ImageIcon andar = new ImageIcon(mov2.class.getResource("/images/gokuderecha.gif"));
+	ImageIcon andar = new ImageIcon(VentanaJuego.class.getResource("/images/gokuderecha.gif"));
 
 	/**
 	 * Launch the application.
@@ -39,7 +39,7 @@ public class mov2 extends Animaciones {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					mov2 window = new mov2();
+					VentanaJuego window = new VentanaJuego();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class mov2 extends Animaciones {
 	/**
 	 * Create the application.
 	 */
-	public mov2() {
+	public VentanaJuego() {
 		initialize();
 
 	}
@@ -71,7 +71,7 @@ public class mov2 extends Animaciones {
 		
 		
 		personaje = new JLabel();
-		personaje.setIcon(new ImageIcon(mov2.class.getResource("/images/gokuderecha.gif")));
+		personaje.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/gokuderecha.gif")));
 		personaje.setBounds(0, 264, 300, 349);
 		personaje.setFocusable(true);
 		frame.getContentPane().add(		personaje);
@@ -79,7 +79,7 @@ public class mov2 extends Animaciones {
 		JLabel fondo = new JLabel("");
 		fondo.setBounds(0, -51, 1279, 675);
 		frame.getContentPane().add(fondo);
-		fondo.setIcon(new ImageIcon(mov2.class.getResource("/images/fondo2.gif")));
+		fondo.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/fondo2.gif")));
 
 		frame.addKeyListener(new KeyAdapter() {
 
