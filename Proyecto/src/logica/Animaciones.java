@@ -13,29 +13,96 @@ import ventanas.VentanaJuego;
 public class Animaciones {
 
 	public Timer andartiemp;
+	public Timer saltartiemp;
 	public TimerTask andando;
+	public TimerTask saltando;
 	public int andarcont = 0;
+	public int saltocont = 0;
 	public int x;
 	public int y;
 	int Vel = 5;
 
-	public ImageIcon andar1 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_1.png"));
-	public ImageIcon andar2 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_2.png"));
-	public ImageIcon andar3 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_3.png"));
-	public ImageIcon andar4 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_4.png"));
-	public ImageIcon andar5 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_5.png"));
-	public ImageIcon andar6 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_6.png"));
-	public ImageIcon andar7 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_7.png"));
-	public ImageIcon andar8 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_8.png"));
-	
-	public void Salto(JLabel e) {
+	public ImageIcon andar1 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_1.png"));
+	public ImageIcon andar2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_2.png"));
+	public ImageIcon andar3 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_3.png"));
+	public ImageIcon andar4 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_4.png"));
+	public ImageIcon andar5 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_5.png"));
+	public ImageIcon andar6 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_6.png"));
+	public ImageIcon andar7 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_7.png"));
+	public ImageIcon andar8 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_8.png"));
+
+	public void Salto(JLabel e , KeyEvent z) {
 
 		x = e.getX();
 		y = e.getY();
 
-		y--;
+		
 
-		e.setLocation(x, y);
+		saltando = new TimerTask() {
+
+			public void run() {
+				
+				if (z.getKeyChar() == 'd') {
+				
+				switch (saltocont) {
+				
+				case 1:
+					saltocont = 2;
+					y--;
+					e.setLocation(x, y);
+					break;
+				case 2:
+					saltocont = 3;
+					y--;
+					e.setLocation(x, y);
+					break;
+				case 3:
+					saltocont = 4;
+					y--;
+					e.setLocation(x, y);
+					break;
+				case 4:
+					saltocont = 5;
+					y--;
+					e.setLocation(x, y);
+					break;
+				case 5:
+					saltocont = 6;
+					y++;
+					e.setLocation(x, y);
+					break;
+				case 6:
+					saltocont = 7;
+					y++;
+					e.setLocation(x, y);
+					break;
+				case 7:
+					saltocont = 8;
+					y++;
+					e.setLocation(x, y);
+					break;
+				case 8:
+					saltocont = 1;
+					y++;
+					e.setLocation(x, y);
+					break;
+				};
+				
+			};
+			saltartiemp = new Timer();
+
+			saltartiemp.schedule(saltando, Vel);
+			}
+			
+			};
 
 	}
 
@@ -62,7 +129,7 @@ public class Animaciones {
 
 			public void run() {
 
-				if (e.getKeyChar() == 'd') {
+				if (e.getKeyChar() == 'd' || e.getKeyChar() == 'a') {
 
 					Icon icono;
 
@@ -136,4 +203,5 @@ public class Animaciones {
 		andartiemp.schedule(andando, Vel);
 
 	}
+	
 }

@@ -74,21 +74,23 @@ public class VentanaJuego extends Animaciones {
 		frame.addKeyListener(new KeyAdapter() {
 
 			public void keyTyped(KeyEvent patada) {
-				if (patada.getKeyChar() == 'w') {
-					Salto(personaje);
-				}
+				
 			}
 			
 			
 
 			public void keyPressed(KeyEvent e) {
+				if (e.getKeyChar() == 'w') {
+					Salto(personaje,e);
+				}
+				
 				if (e.getKeyChar() == 'd') {
 				andar(personaje, e);
 				moverDcha(personaje);
 				}
 				
 				if (e.getKeyChar() == 'a') {
-					
+					andar(personaje, e);
 					moverIzq(personaje);
 					}
 				if (e.getKeyChar() == 'a' && e.getKeyChar() == 'a') {
