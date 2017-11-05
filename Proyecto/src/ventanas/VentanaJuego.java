@@ -101,6 +101,9 @@ public class VentanaJuego extends Animaciones {
 					moverDcha(personaje);
 					moverIzq(personaje);
 				}
+				if (e.getKeyChar() == 'f') {
+					puñetazo(personaje);
+				}
 				
 			
 			}
@@ -114,7 +117,9 @@ public class VentanaJuego extends Animaciones {
 				if (e.getKeyChar() == 's') {
 					personaje.setIcon(quieto);
 				}
-				
+				if (e.getKeyChar() == 'f') {
+					personaje.setIcon(quieto);
+				}
 			}
 
 		});

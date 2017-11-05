@@ -41,8 +41,14 @@ public class Animaciones {
 	public ImageIcon agachado = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_andar/personaje_agachado.png"));
 
+	public ImageIcon puñetazo = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_puñetazo.png"));
 	
 	
+	public void puñetazo(JLabel e){
+		
+		e.setIcon(puñetazo);
+	}
 	
 	public void agacharse (JLabel e){
 		
