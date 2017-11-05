@@ -11,9 +11,6 @@ import javax.swing.ImageIcon;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.TimerTask;
-
-import java.util.Timer;
 
 public class VentanaJuego extends Animaciones {
 
@@ -21,16 +18,9 @@ public class VentanaJuego extends Animaciones {
 
 	private JFrame frame;
 	private JLabel personaje;
-	Timer timer;
-	Timer timer2;
-	TimerTask tarea;
-	TimerTask tarea2;
-	public int x;
-	public int y;
-	public int contador;
-	public int z = 0;
-
-	ImageIcon andar = new ImageIcon(VentanaJuego.class.getResource("/images/gokuderecha.gif"));
+	
+	
+	ImageIcon quieto = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_quieto.png"));
 
 	/**
 	 * Launch the application.
@@ -71,8 +61,8 @@ public class VentanaJuego extends Animaciones {
 		
 		
 		personaje = new JLabel();
-		personaje.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/gokuderecha.gif")));
-		personaje.setBounds(0, 264, 300, 349);
+		personaje.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_quieto.png")));
+		personaje.setBounds(0, 264, 236, 349);
 		personaje.setFocusable(true);
 		frame.getContentPane().add(		personaje);
 
@@ -111,10 +101,10 @@ public class VentanaJuego extends Animaciones {
 			}
 			public void keyReleased(KeyEvent e) {
 				if (e.getKeyChar() == 'd') {
-					personaje.setIcon(andar);
+					personaje.setIcon(quieto);
 				}
 				if (e.getKeyChar() == 'a') {
-					personaje.setIcon(andar);
+					personaje.setIcon(quieto);
 				}
 			}
 

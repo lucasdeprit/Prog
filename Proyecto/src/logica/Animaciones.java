@@ -19,18 +19,15 @@ public class Animaciones {
 	public int y;
 	int Vel = 5;
 
-	public ImageIcon andar1 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto1.png"));
-	public ImageIcon andar2 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto2.png"));
-	public ImageIcon andar3 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto3.png"));
-	public ImageIcon andar4 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto4.png"));
-	public ImageIcon andar5 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto5.png"));
-	public ImageIcon andar6 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto6.png"));
-	public ImageIcon andar7 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto7.png"));
-	public ImageIcon andar8 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto8.png"));
-	public ImageIcon andar9 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto9.png"));
-	public ImageIcon andar10 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto10.png"));
-	public ImageIcon andar11 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/foto11.png"));
-
+	public ImageIcon andar1 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_1.png"));
+	public ImageIcon andar2 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_2.png"));
+	public ImageIcon andar3 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_3.png"));
+	public ImageIcon andar4 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_4.png"));
+	public ImageIcon andar5 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_5.png"));
+	public ImageIcon andar6 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_6.png"));
+	public ImageIcon andar7 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_7.png"));
+	public ImageIcon andar8 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_8.png"));
+	
 	public void Salto(JLabel e) {
 
 		x = e.getX();
@@ -123,25 +120,6 @@ public class Animaciones {
 						break;
 
 					case 8:
-
-						andarcont = 9;
-						icono = andar9;
-						y.setIcon(icono);
-						break;
-					case 9:
-
-						andarcont = 10;
-						icono = andar10;
-						y.setIcon(icono);
-						break;
-					case 10:
-
-						andarcont = 11;
-						icono = andar11;
-						y.setIcon(icono);
-						break;
-
-					case 11:
 
 						andarcont = 1;
 						break;
