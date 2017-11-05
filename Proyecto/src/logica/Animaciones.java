@@ -38,71 +38,93 @@ public class Animaciones {
 			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_7.png"));
 	public ImageIcon andar8 = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_8.png"));
+	public ImageIcon agachado = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_andar/personaje_agachado.png"));
 
+	
+	
+	
+	public void agacharse (JLabel e){
+		
+		e.setIcon(agachado);
+		
+	}
+	
+	
+	
+	
+	
 	public void Salto(JLabel e , KeyEvent z) {
 
+		
+		
 		x = e.getX();
 		y = e.getY();
 
+		y--;
 		
+		e.setLocation(x, y);
+		
+		
+		//no funciona	
 
-		saltando = new TimerTask() {
-
-			public void run() {
-				
-				if (z.getKeyChar() == 'd') {
-				
-				switch (saltocont) {
-				
-				case 1:
-					saltocont = 2;
-					y--;
-					e.setLocation(x, y);
-					break;
-				case 2:
-					saltocont = 3;
-					y--;
-					e.setLocation(x, y);
-					break;
-				case 3:
-					saltocont = 4;
-					y--;
-					e.setLocation(x, y);
-					break;
-				case 4:
-					saltocont = 5;
-					y--;
-					e.setLocation(x, y);
-					break;
-				case 5:
-					saltocont = 6;
-					y++;
-					e.setLocation(x, y);
-					break;
-				case 6:
-					saltocont = 7;
-					y++;
-					e.setLocation(x, y);
-					break;
-				case 7:
-					saltocont = 8;
-					y++;
-					e.setLocation(x, y);
-					break;
-				case 8:
-					saltocont = 1;
-					y++;
-					e.setLocation(x, y);
-					break;
-				};
-				
-			};
-			saltartiemp = new Timer();
-
-			saltartiemp.schedule(saltando, Vel);
-			}
-			
-			};
+//		saltando = new TimerTask() {
+//
+//			public void run() {
+//				
+//				if (z.getKeyChar() == 'd') {
+//				
+//				switch (saltocont) {
+//				
+//				case 1:
+//					saltocont = 2;
+//					y--;
+//					e.setLocation(x, y);
+//					break;
+//				case 2:
+//					saltocont = 3;
+//					y--;
+//					e.setLocation(x, y);
+//					break;
+//				case 3:
+//					saltocont = 4;
+//					y--;
+//					e.setLocation(x, y);
+//					break;
+//				case 4:
+//					saltocont = 5;
+//					y--;
+//					e.setLocation(x, y);
+//					break;
+//				case 5:
+//					saltocont = 6;
+//					y++;
+//					e.setLocation(x, y);
+//					break;
+//				case 6:
+//					saltocont = 7;
+//					y++;
+//					e.setLocation(x, y);
+//					break;
+//				case 7:
+//					saltocont = 8;
+//					y++;
+//					e.setLocation(x, y);
+//					break;
+//				case 8:
+//					saltocont = 1;
+//					y++;
+//					e.setLocation(x, y);
+//					break;
+//				};
+//				
+//			};
+//			saltartiemp = new Timer();
+//
+//			saltartiemp.schedule(saltando, Vel);
+//			}
+//			
+//			};
 
 	}
 
