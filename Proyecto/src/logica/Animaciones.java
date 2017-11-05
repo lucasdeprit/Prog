@@ -62,12 +62,12 @@ public class Animaciones {
 	
 	public void Salto(JLabel e , KeyEvent z) {
 
-		
+		e.setIcon(andar4);
 		
 		x = e.getX();
 		y = e.getY();
 
-		y--;
+		y=y-5;
 		
 		e.setLocation(x, y);
 		

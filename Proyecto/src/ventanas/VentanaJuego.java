@@ -96,10 +96,10 @@ public class VentanaJuego extends Animaciones {
 					andar(personaje, e);
 					moverIzq(personaje);
 					}
-				if (e.getKeyChar() == 'd' && e.getKeyChar() == 'a') {
-					andar(personaje, e);
+				if (e.getKeyChar() == 'd' && e.getKeyChar() == 'w') {
+					
 					moverDcha(personaje);
-					moverIzq(personaje);
+					Salto(personaje,e);
 				}
 				if (e.getKeyChar() == 'f') {
 					puñetazo(personaje);
@@ -118,6 +118,11 @@ public class VentanaJuego extends Animaciones {
 					personaje.setIcon(quieto);
 				}
 				if (e.getKeyChar() == 'f') {
+					personaje.setIcon(quieto);
+				}
+				if (e.getKeyChar() == 'w') {
+					personaje.setLocation(x,264);
+					
 					personaje.setIcon(quieto);
 				}
 			}
