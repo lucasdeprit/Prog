@@ -11,6 +11,12 @@ import javax.swing.ImageIcon;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.swing.JProgressBar;
+import java.awt.Color;
+import java.awt.Font;
 
 public class VentanaJuego extends Animaciones {
 
@@ -18,6 +24,9 @@ public class VentanaJuego extends Animaciones {
 
 	private JFrame frame;
 	private JLabel personaje;
+	public Timer reloj2;
+	public TimerTask relcont;
+	public String z;
 	
 	
 	ImageIcon quieto = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_quieto.png"));
@@ -51,6 +60,8 @@ public class VentanaJuego extends Animaciones {
 	 */
 	private void initialize() {
 
+		
+		
 		frame = new JFrame();
 
 		frame.setFocusable(true);
@@ -58,6 +69,24 @@ public class VentanaJuego extends Animaciones {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
+		
+		JLabel reloj = new JLabel("0");
+		reloj.setForeground(Color.BLUE);
+		reloj.setFont(new Font("Trajan Pro", Font.BOLD | Font.ITALIC, 21));
+		reloj.setBounds(598, 11, 46, 35);
+		frame.getContentPane().add(reloj);
+	
+		JLabel lblNewLabel = new JLabel("player 1:");
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setFont(new Font("Viner Hand ITC", Font.BOLD, 23));
+		lblNewLabel.setBounds(30, 21, 136, 25);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JProgressBar vida = new JProgressBar();
+		vida.setForeground(Color.RED);
+		vida.setBounds(10, 11, 484, 46);
+		frame.getContentPane().add(vida);
+		vida.setValue(100);
 		
 		
 		personaje = new JLabel();
@@ -67,7 +96,7 @@ public class VentanaJuego extends Animaciones {
 		frame.getContentPane().add(		personaje);
 
 		JLabel fondo = new JLabel("");
-		fondo.setBounds(0, -51, 1279, 675);
+		fondo.setBounds(0, -41, 1279, 675);
 		frame.getContentPane().add(fondo);
 		fondo.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/fondo2.gif")));
 

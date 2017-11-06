@@ -13,14 +13,19 @@ import ventanas.VentanaJuego;
 public class Animaciones {
 
 	public Timer andartiemp;
-	public Timer saltartiemp;
+	
 	public TimerTask andando;
-	public TimerTask saltando;
+	
+	public int segundos = 0;
+	
 	public int andarcont = 0;
 	public int saltocont = 0;
 	public int x;
 	public int y;
 	int Vel = 5;
+	
+	
+	
 
 	public ImageIcon andar1 = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_1.png"));
@@ -43,6 +48,10 @@ public class Animaciones {
 
 	public ImageIcon puñetazo = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_andar/personaje_puñetazo.png"));
+	
+	
+	
+	
 	
 	
 	public void puñetazo(JLabel e){
