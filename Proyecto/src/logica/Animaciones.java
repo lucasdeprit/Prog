@@ -28,26 +28,26 @@ public class Animaciones {
 	
 
 	public ImageIcon andar1 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_1.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_1.png"));
 	public ImageIcon andar2 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_2.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_2.png"));
 	public ImageIcon andar3 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_3.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_3.png"));
 	public ImageIcon andar4 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_4.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_4.png"));
 	public ImageIcon andar5 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_5.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_5.png"));
 	public ImageIcon andar6 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_6.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_6.png"));
 	public ImageIcon andar7 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_7.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_7.png"));
 	public ImageIcon andar8 = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_andando_8.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_8.png"));
 	public ImageIcon agachado = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_agachado.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_agachado.png"));
 
 	public ImageIcon puñetazo = new ImageIcon(
-			VentanaJuego.class.getResource("/images/sprites_andar/personaje_puñetazo.png"));
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_puñetazo.png"));
 	
 	
 	

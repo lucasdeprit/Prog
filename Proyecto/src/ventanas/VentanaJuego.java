@@ -29,7 +29,7 @@ public class VentanaJuego extends Animaciones {
 	public String z;
 	
 	
-	ImageIcon quieto = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_quieto.png"));
+	ImageIcon quieto = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_quieto.png"));
 
 	/**
 	 * Launch the application.
@@ -90,7 +90,7 @@ public class VentanaJuego extends Animaciones {
 		
 		
 		personaje = new JLabel();
-		personaje.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/sprites_andar/personaje_quieto.png")));
+		personaje.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_quieto.png")));
 		personaje.setBounds(0, 264, 236, 349);
 		personaje.setFocusable(true);
 		frame.getContentPane().add(		personaje);
