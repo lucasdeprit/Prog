@@ -71,75 +71,76 @@ public class Animaciones {
 	
 	public void Salto(JLabel e , KeyEvent z) {
 
-		e.setIcon(andar4);
 		
-		x = e.getX();
-		y = e.getY();
-
-		y=y-5;
 		
-		e.setLocation(x, y);
+		
+		
 		
 		
 		//no funciona	
 
-//		saltando = new TimerTask() {
-//
-//			public void run() {
-//				
-//				if (z.getKeyChar() == 'd') {
-//				
-//				switch (saltocont) {
-//				
-//				case 1:
-//					saltocont = 2;
-//					y--;
-//					e.setLocation(x, y);
-//					break;
-//				case 2:
-//					saltocont = 3;
-//					y--;
-//					e.setLocation(x, y);
-//					break;
-//				case 3:
-//					saltocont = 4;
-//					y--;
-//					e.setLocation(x, y);
-//					break;
-//				case 4:
-//					saltocont = 5;
-//					y--;
-//					e.setLocation(x, y);
-//					break;
-//				case 5:
-//					saltocont = 6;
-//					y++;
-//					e.setLocation(x, y);
-//					break;
-//				case 6:
-//					saltocont = 7;
-//					y++;
-//					e.setLocation(x, y);
-//					break;
-//				case 7:
-//					saltocont = 8;
-//					y++;
-//					e.setLocation(x, y);
-//					break;
-//				case 8:
-//					saltocont = 1;
-//					y++;
-//					e.setLocation(x, y);
-//					break;
-//				};
-//				
-//			};
-//			saltartiemp = new Timer();
-//
-//			saltartiemp.schedule(saltando, Vel);
-//			}
-//			
-//			};
+		andando = new TimerTask() {
+
+			public void run() {
+				
+				
+				
+				x = e.getX();
+				y = e.getY();
+
+				if (z.getKeyChar() == 'w') {
+				
+				switch (andarcont) {
+				
+				case 1:
+					andarcont = 2;
+					e.setIcon(andar4);
+					e.setLocation(x, y - 10);
+					break;
+				case 2:
+					andarcont = 3;
+					e.setIcon(andar4);
+					e.setLocation(x, y - 10);
+					break;
+				case 3:
+					andarcont = 4;
+					e.setIcon(andar4);
+					e.setLocation(x, y - 10);
+					break;
+				case 4:
+					andarcont = 5;
+					e.setIcon(andar4);
+					e.setLocation(x, y - 10);
+					break;
+				case 5:
+					andarcont = 6;
+					e.setIcon(andar4);
+					e.setLocation(x, y + 10);
+					break;
+				case 6:
+					andarcont = 7;
+					e.setIcon(andar4);
+					e.setLocation(x, y + 10);
+					break;
+				case 7:
+					andarcont = 8;
+					e.setIcon(andar4);
+					e.setLocation(x, y + 10);
+					break;
+				case 8:
+					andarcont = 1;
+					e.setIcon(andar4);
+					e.setLocation(x, y + 10);
+					break;
+				};
+				
+			};
+			andartiemp = new Timer();
+
+			andartiemp.schedule(andando,5000, 5000);
+			}
+			
+			};
 
 	}
 
@@ -148,7 +149,6 @@ public class Animaciones {
 		x = e.getX();
 		y = e.getY();
 		x = x - 10;
-		e.setIcon(andar1);
 		e.setLocation(x, y);
 
 	}
