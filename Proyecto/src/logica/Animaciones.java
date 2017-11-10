@@ -58,7 +58,7 @@ public class Animaciones extends ventana {
 		JLabel fondo = new JLabel("");
 		fondo.setBounds(0, -41, 1279, 675);
 		e.getContentPane().add(fondo);
-		fondo.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/fondo2.gif")));
+		fondo.setIcon(fondpred);
 		
 		
 	}

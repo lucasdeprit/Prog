@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
+import java.awt.Font;
+import java.awt.Color;
 
 public class ventana {
 
@@ -20,7 +22,10 @@ public class ventana {
 	private JLabel GokuGrande;
 	private JLabel LuffyGrande;
 	private JLabel PersGrande;
+	private JLabel fondo ;
 	public int personajenum = 0;
+	public int fondnum = 0;
+	public ImageIcon fondpred = new ImageIcon(VentanaJuego.class.getResource("/images/fondo2.gif"));
 	
 	
 	
@@ -52,15 +57,9 @@ public class ventana {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1482, 1154);
+		frame.setBounds(0, 0, 1500, 1900);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		PersGrande = new JLabel("");
-		PersGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/sprites_personajeEjemplo/personaje_agachado.png")));
-		PersGrande.setBounds(160, 243, 527, 581);
-		frame.getContentPane().add(PersGrande);
-		PersGrande.setVisible(false);
 		
 		JButton btnStart = new JButton("Start");
 		btnStart.setVisible(true);
@@ -68,7 +67,7 @@ public class ventana {
 			@Override
 			
 			public void mouseClicked(MouseEvent e) {
-				if (personajenum == 4){
+				if (personajenum == 4 && fondnum == 1){
 				VentanaJuego j = new VentanaJuego();
 				j.frame.setVisible(true);
 				frame.dispose();
@@ -79,10 +78,34 @@ public class ventana {
 				if (personajenum == 0){
 					JOptionPane.showMessageDialog(null, "no has escogido personaje");
 				}
+				if (fondnum == 0){
+					JOptionPane.showMessageDialog(null, "no has escogido fondo");
+				}
 			}
 		});
-		btnStart.setBounds(566, 675, 295, 52);
+		btnStart.setBounds(556, 947, 295, 52);
 		frame.getContentPane().add(btnStart);
+		
+		JButton btnEscenarioPredeterminado = new JButton("escenario predeterminado");
+		btnEscenarioPredeterminado.setForeground(Color.DARK_GRAY);
+		btnEscenarioPredeterminado.setFont(new Font("Viner Hand ITC", Font.PLAIN, 19));
+		btnEscenarioPredeterminado.addMouseListener(new MouseAdapter() {
+		@Override
+			public void mouseClicked(MouseEvent e) {
+			
+			fondo.setVisible(true);
+			fondo.setIcon(fondpred);
+			fondnum = 1;
+			}
+		});
+		btnEscenarioPredeterminado.setBounds(575, 717, 259, 29);
+		frame.getContentPane().add(btnEscenarioPredeterminado);
+		
+		PersGrande = new JLabel("");
+		PersGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/sprites_personajeEjemplo/personaje_agachado.png")));
+		PersGrande.setBounds(161, 243, 527, 581);
+		frame.getContentPane().add(PersGrande);
+		PersGrande.setVisible(false);
 		
 		NarutoGrande = new JLabel("");
 		NarutoGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/naruto_grande.png")));
@@ -108,6 +131,12 @@ public class ventana {
 		LuffyGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/luffy_grande.png")));
 		LuffyGrande.setBounds(-3, 0, 544, 1098);
 		LuffyGrande.setVisible(false);
+		
+		JLabel lblEscenarios = new JLabel("ESCENARIOS:");
+		lblEscenarios.setForeground(Color.BLUE);
+		lblEscenarios.setFont(new Font("Trajan Pro", Font.PLAIN, 20));
+		lblEscenarios.setBounds(565, 675, 296, 42);
+		frame.getContentPane().add(lblEscenarios);
 		frame.getContentPane().add(LuffyGrande);
 		
 		
@@ -183,6 +212,12 @@ public class ventana {
 		btnpers.setIcon(new ImageIcon(ventana.class.getResource("/images/sprites_personajeEjemplo/personaje_quieto.png")));
 		btnpers.setBounds(566, 544, 140, 115);
 		frame.getContentPane().add(btnpers);
+		
+		fondo = new JLabel("");
+		fondo.setBounds(-3, 0, 1463, 1028);
+		
+		frame.getContentPane().add(fondo);
+		fondo.setVisible(false);
 		
 		
 		
