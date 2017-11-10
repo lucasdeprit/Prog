@@ -6,6 +6,7 @@ import java.util.TimerTask;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import ventanas.VentanaJuego;
@@ -24,7 +25,7 @@ public class Animaciones extends ventana {
 	public int x;
 	public int y;
 	int Vel = 5;
-	
+	public JLabel fondo;
 	
 	
 	
@@ -53,16 +54,23 @@ public class Animaciones extends ventana {
 
 	
 	
-	
+	public void fondo (JFrame e){
+		JLabel fondo = new JLabel("");
+		fondo.setBounds(0, -41, 1279, 675);
+		e.getContentPane().add(fondo);
+		fondo.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/fondo2.gif")));
+		
+		
+	}
 	
 	public void puñetazo(JLabel e){
-		if (personajenum == 4){
+		
 		e.setIcon(puñetazo);
-		}
+		
 	}
 	
 	public void agacharse (JLabel e){
-		if (personajenum == 4)
+		
 		e.setIcon(agachado);
 		
 	}
@@ -164,7 +172,7 @@ public class Animaciones extends ventana {
 	}
 
 	public void andar(JLabel y, KeyEvent e) {
-		if (personajenum == 4)
+		
 		andando = new TimerTask() {
 
 			public void run() {

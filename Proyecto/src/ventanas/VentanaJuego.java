@@ -95,10 +95,7 @@ public class VentanaJuego extends Animaciones {
 		personaje.setFocusable(true);
 		frame.getContentPane().add(		personaje);
 
-		JLabel fondo = new JLabel("");
-		fondo.setBounds(0, -41, 1279, 675);
-		frame.getContentPane().add(fondo);
-		fondo.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/fondo2.gif")));
+		fondo(frame);
 
 		frame.addKeyListener(new KeyAdapter() {
 
