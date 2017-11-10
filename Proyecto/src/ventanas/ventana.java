@@ -57,9 +57,11 @@ public class ventana {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(0, 0, 1500, 1900);
+		frame.getContentPane().setBackground(Color.DARK_GRAY);
+		frame.setBounds(0, 0, 1500, 1049);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 		
 		JButton btnStart = new JButton("Start");
 		btnStart.setVisible(true);
