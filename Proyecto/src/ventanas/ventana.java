@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,7 +15,14 @@ public class ventana {
 
 	private JFrame frame;
 	private JButton btnGoku ;
-
+	private JLabel NarutoGrande;
+	private JLabel GokuGrande;
+	private JLabel LuffyGrande;
+	private JLabel PersGrande;
+	public int personajenum = 0;
+	
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -46,34 +55,62 @@ public class ventana {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel NarutoGrande = new JLabel("");
+		PersGrande = new JLabel("");
+		PersGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/sprites_personajeEjemplo/personaje_agachado.png")));
+		PersGrande.setBounds(160, 243, 527, 581);
+		frame.getContentPane().add(PersGrande);
+		PersGrande.setVisible(false);
+		
+		JButton btnStart = new JButton("Start");
+		btnStart.setVisible(true);
+		btnStart.addMouseListener(new MouseAdapter() {
+			@Override
+			
+			public void mouseClicked(MouseEvent e) {
+				if (personajenum == 4){
+				VentanaJuego j = new VentanaJuego();
+				j.frame.setVisible(true);
+				frame.dispose();
+				}
+				if (personajenum == 3 || personajenum == 2 || personajenum == 1){
+					JOptionPane.showMessageDialog(null, "el personaje todavia no esta disponible, disculpe las molestias.");
+				}
+				if (personajenum == 0){
+					JOptionPane.showMessageDialog(null, "no has escogido personaje");
+				}
+			}
+		});
+		btnStart.setBounds(566, 675, 295, 52);
+		frame.getContentPane().add(btnStart);
+		
+		NarutoGrande = new JLabel("");
 		NarutoGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/naruto_grande.png")));
-		NarutoGrande.setBounds(10, -107, 527, 1180);
+		NarutoGrande.setBounds(20, -121, 547, 1180);
 		frame.getContentPane().add(NarutoGrande);
 		NarutoGrande.setVisible(false);
 		
 		JButton btnNaruto = new JButton("New button");
 		btnNaruto.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				btnNaruto.setVisible(false);
+			public void mouseClicked(MouseEvent arg0) {
+				
 				NarutoGrande.setVisible(true);
+				GokuGrande.setVisible(false);
+				LuffyGrande.setVisible(false);
+				PersGrande.setVisible(false);
+				personajenum=1;
 			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			btnNaruto.setVisible(true);
-			NarutoGrande.setVisible(false);
-			}
+			
 		});
 		
-		JLabel LuffyGrande = new JLabel("New label");
+		LuffyGrande = new JLabel("New label");
 		LuffyGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/luffy_grande.png")));
 		LuffyGrande.setBounds(-3, 0, 544, 1098);
 		LuffyGrande.setVisible(false);
 		frame.getContentPane().add(LuffyGrande);
 		
 		
-		JLabel GokuGrande = new JLabel("");
+		GokuGrande = new JLabel("");
 		GokuGrande.setIcon(new ImageIcon(ventana.class.getResource("/images/Goku_grande.png")));
 		GokuGrande.setBounds(-13, -8, 547, 1007);
 		frame.getContentPane().add(GokuGrande);
@@ -84,28 +121,28 @@ public class ventana {
 		btnNaruto.setBounds(566, 315, 140, 101);
 		frame.getContentPane().add(btnNaruto);
 		
-		JButton btnNaruto2 = new JButton("New button");
+		JButton btnNaruto2 = new JButton("");
 		btnNaruto2.setBounds(721, 315, 140, 101);
 		frame.getContentPane().add(btnNaruto2);
 		
 		JButton btnLuffy = new JButton("");
 		btnLuffy.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e) {
+			public void mouseClicked(MouseEvent e) {
 				LuffyGrande.setVisible(true);
-				btnLuffy.setVisible(false);
+				GokuGrande.setVisible(false);
+				NarutoGrande.setVisible(false);
+				PersGrande.setVisible(false);
+				personajenum = 2;
 			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				LuffyGrande.setVisible(false);
-				btnLuffy.setVisible(true);
-			}
+			
+			
 		});
 		btnLuffy.setIcon(new ImageIcon(ventana.class.getResource("/images/luffy.jpg")));
 		btnLuffy.setBounds(566, 427, 140, 101);
 		frame.getContentPane().add(btnLuffy);
 		
-		JButton btnLuffy2 = new JButton("New button");
+		JButton btnLuffy2 = new JButton("");
 		btnLuffy2.setBounds(721, 427, 140, 101);
 		frame.getContentPane().add(btnLuffy2);
 		
@@ -113,22 +150,37 @@ public class ventana {
 		btnGoku = new JButton("New button");
 		btnGoku.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent arg0) {
+			public void mouseClicked(MouseEvent arg0) {
 				GokuGrande.setVisible(true);
-				btnGoku.setVisible(false);
+				NarutoGrande.setVisible(false);
+				LuffyGrande.setVisible(false);
+				PersGrande.setVisible(false);
+				personajenum = 3;
 			}
-			public void mouseExited(MouseEvent e) {
-				GokuGrande.setVisible(false);
-				btnGoku.setVisible(true);	
-			}
+			
 			});
 		btnGoku.setIcon(new ImageIcon(ventana.class.getResource("/images/goku_juego.png")));
 		btnGoku.setBounds(566, 198, 140, 101);
 		frame.getContentPane().add(btnGoku);
 		
-		JButton btngoku2 = new JButton("New button");
+		JButton btngoku2 = new JButton("");
 		btngoku2.setBounds(721, 198, 140, 101);
 		frame.getContentPane().add(btngoku2);
+		
+		JButton btnpers = new JButton("");
+		btnpers.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				GokuGrande.setVisible(false);
+				NarutoGrande.setVisible(false);
+				LuffyGrande.setVisible(false);
+				PersGrande.setVisible(true);
+				personajenum=4;
+			}
+		});
+		btnpers.setIcon(new ImageIcon(ventana.class.getResource("/images/sprites_personajeEjemplo/personaje_quieto.png")));
+		btnpers.setBounds(566, 544, 140, 115);
+		frame.getContentPane().add(btnpers);
 		
 		
 		

@@ -22,7 +22,7 @@ public class VentanaJuego extends Animaciones {
 
 	protected static final int KeyEvent = 0;
 
-	private JFrame frame;
+	public JFrame frame;
 	private JLabel personaje;
 	public Timer reloj2;
 	public TimerTask relcont;

@@ -9,8 +9,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import ventanas.VentanaJuego;
+import ventanas.ventana;
 
-public class Animaciones {
+public class Animaciones extends ventana {
 
 	public Timer andartiemp;
 	
@@ -26,7 +27,7 @@ public class Animaciones {
 	
 	
 	
-
+	
 	public ImageIcon andar1 = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_andando_1.png"));
 	public ImageIcon andar2 = new ImageIcon(
@@ -49,18 +50,19 @@ public class Animaciones {
 	public ImageIcon puñetazo = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_puñetazo.png"));
 	
-	
+
 	
 	
 	
 	
 	public void puñetazo(JLabel e){
-		
+		if (personajenum == 4){
 		e.setIcon(puñetazo);
+		}
 	}
 	
 	public void agacharse (JLabel e){
-		
+		if (personajenum == 4)
 		e.setIcon(agachado);
 		
 	}
@@ -162,6 +164,7 @@ public class Animaciones {
 	}
 
 	public void andar(JLabel y, KeyEvent e) {
+		if (personajenum == 4)
 		andando = new TimerTask() {
 
 			public void run() {
