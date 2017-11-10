@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.SystemColor;
 
 public class ventana {
 
@@ -168,6 +169,7 @@ public class ventana {
 		frame.getContentPane().add(btngoku2);
 		
 		JButton btnpers = new JButton("");
+		btnpers.setBackground(SystemColor.window);
 		btnpers.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
