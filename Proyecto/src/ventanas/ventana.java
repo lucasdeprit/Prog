@@ -8,13 +8,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import logica.Animaciones;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
 import java.awt.Font;
 import java.awt.Color;
 
-public class ventana {
+public class ventana  {
 
 	private JFrame frame;
 	private JButton btnGoku ;
@@ -61,7 +63,7 @@ public class ventana {
 		frame.setBounds(0, 0, 1500, 1049);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setResizable(false);
+		frame.setResizable(true);
 		
 		JButton btnStart = new JButton("Start");
 		btnStart.setVisible(true);

@@ -98,7 +98,7 @@ public class Animaciones extends ventana {
 				x = e.getX();
 				y = e.getY();
 
-				if (z.getKeyChar() == 'w') {
+				if (z.getKeyChar() == 'w' ) {
 				
 				switch (andarcont) {
 				
@@ -177,7 +177,7 @@ public class Animaciones extends ventana {
 
 			public void run() {
 
-				if (e.getKeyChar() == 'd' || e.getKeyChar() == 'a') {
+				if (e.getKeyChar() == 'd' || e.getKeyChar() == 'a'  || e.getKeyChar() == 'j' || e.getKeyChar()=='l') {
 
 					Icon icono;
 
@@ -250,6 +250,13 @@ public class Animaciones extends ventana {
 
 		andartiemp.schedule(andando, Vel);
 
+	}
+	
+	public void quitarVida(JLabel p1 , JLabel p2 , int Xvida, KeyEvent e){
+		if (p1.getX() == p2.getX() && e.getKeyChar()=='h'){
+			Xvida = Xvida - 1;
+		}
+		
 	}
 	
 }
