@@ -137,6 +137,7 @@ public class Animaciones extends ventana {
 					e.setIcon(andar4);
 					e.setLocation(x, y + 10);
 					break;
+					
 				case 8:
 					andarcont = 1;
 					e.setIcon(andar4);
