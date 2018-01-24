@@ -30,11 +30,13 @@ public class VentanaJuego extends Animaciones   {
 	public String z;
 	public int Xvida1 = 10;
 	public int Xvida2 = 10;
+	public int pers1 = 1;
+	public int pers2 = 2;
 			
 	
 	
 	ImageIcon quieto = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_quieto.png"));
-
+	ImageIcon quieto2 = new ImageIcon(VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_quieto.png"));
 	/**
 	 * Launch the application.
 	 */
@@ -116,7 +118,7 @@ public class VentanaJuego extends Animaciones   {
 		frame.getContentPane().add(		personaje);
 
 		personaje2 = new JLabel();
-		personaje2.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_quieto.png")));
+		personaje2.setIcon(new ImageIcon(VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_quieto.png")));
 		personaje2.setBounds(1030, 264, 236, 349);
 		personaje2.setFocusable(true);
 		frame.getContentPane().add(personaje2);
@@ -133,35 +135,36 @@ public class VentanaJuego extends Animaciones   {
 
 			public void keyPressed(KeyEvent e) {
 				
+				comprobarTeclas(e);
 				
 				
 				if (e.getKeyChar() == 'w') {
 					Salto(personaje,e);
 				}
 				if (e.getKeyChar() == 's') {
-					agacharse(personaje);
+					agacharse(personaje , pers1);
 				}
 				if (e.getKeyChar() == 'k') {
-					agacharse(personaje2);
+					agacharse(personaje2 ,pers2);
 					
 				}
 				
 				if (e.getKeyChar() == 'd') {
-				andar(personaje, e);
+				andar(personaje, e,pers1);
 				moverDcha(personaje);
 				}
 				if (e.getKeyChar() == 'l') {
-					andar(personaje2, e);
+					andar(personaje2, e, pers1);
 					moverDcha(personaje2);
 					}
 					
 				if (e.getKeyChar() == 'j') {
-					andar(personaje2, e);
+					andar(personaje2, e , pers2);
 					moverIzq(personaje2);
 					}
 				
 				if (e.getKeyChar() == 'a') {
-					andar(personaje, e);
+					andar(personaje, e ,pers2);
 					moverIzq(personaje);
 					}
 				if (e.getKeyChar() == 'd' && e.getKeyChar() == 'w') {
@@ -170,10 +173,11 @@ public class VentanaJuego extends Animaciones   {
 					Salto(personaje,e);
 				}
 				if (e.getKeyChar() == 'f') {
-					puñetazo(personaje);
+					puñetazo(personaje, pers1);
+					quitarVida(personaje,personaje2,Xvida2,e);
 				}
 				if (e.getKeyChar() == 'h') {
-					puñetazo(personaje2);
+					puñetazo(personaje2, pers2);
 					quitarVida(personaje,personaje2,Xvida1,e);
 				}
 				
@@ -184,13 +188,13 @@ public class VentanaJuego extends Animaciones   {
 					personaje.setIcon(quieto);
 				}
 				if (e.getKeyChar() == 'k') {
-					personaje2.setIcon(quieto);
+					personaje2.setIcon(quieto2);
 				}
 				if (e.getKeyChar() == 'j') {
-					personaje2.setIcon(quieto);
+					personaje2.setIcon(quieto2);
 				}
 				if (e.getKeyChar() == 'h') {
-					personaje2.setIcon(quieto);
+					personaje2.setIcon(quieto2);
 				}
 				if (e.getKeyChar() == 'a') {
 					personaje.setIcon(quieto);

@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import logica.Animacion;
 import logica.Animaciones;
 
 import java.awt.event.MouseAdapter;
@@ -16,7 +17,7 @@ import java.awt.SystemColor;
 import java.awt.Font;
 import java.awt.Color;
 
-public class ventana  {
+public class ventana extends Animacion {
 
 	private JFrame frame;
 	private JButton btnGoku ;

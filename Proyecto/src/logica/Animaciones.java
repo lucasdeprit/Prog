@@ -51,7 +51,28 @@ public class Animaciones extends ventana {
 	public ImageIcon puñetazo = new ImageIcon(
 			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje_puñetazo.png"));
 	
+	public ImageIcon andar1_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_1.png"));
+	public ImageIcon andar2_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_2.png"));
+	public ImageIcon andar3_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_3.png"));
+	public ImageIcon andar4_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_4.png"));
+	public ImageIcon andar5_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_5.png"));
+	public ImageIcon andar6_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_6.png"));
+	public ImageIcon andar7_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_7.png"));
+	public ImageIcon andar8_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_andando_8.png"));
+	public ImageIcon agachado_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_agachado.png"));
 
+	public ImageIcon puñetazo_2 = new ImageIcon(
+			VentanaJuego.class.getResource("/images/sprites_personajeEjemplo/personaje2_puñetazo.png"));
+	
 	
 	
 	public void fondo (JFrame e){
@@ -63,16 +84,22 @@ public class Animaciones extends ventana {
 		
 	}
 	
-	public void puñetazo(JLabel e){
-		
+	public void puñetazo(JLabel e, int i){
+		if(i==1){
 		e.setIcon(puñetazo);
-		
+		}
+		if(i==2){
+			e.setIcon(puñetazo_2);
+		}
 	}
 	
-	public void agacharse (JLabel e){
-		
+	public void agacharse (JLabel e, int i){
+		if(i==1){
 		e.setIcon(agachado);
-		
+		}
+		if(i==2){
+			e.setIcon(agachado_2);
+		}
 	}
 	
 	
@@ -98,7 +125,7 @@ public class Animaciones extends ventana {
 				x = e.getX();
 				y = e.getY();
 
-				if (z.getKeyChar() == 'w' ) {
+				
 				
 				switch (andarcont) {
 				
@@ -145,7 +172,7 @@ public class Animaciones extends ventana {
 					break;
 				};
 				
-			};
+			
 			andartiemp = new Timer();
 
 			andartiemp.schedule(andando,5000, 5000);
@@ -172,7 +199,7 @@ public class Animaciones extends ventana {
 
 	}
 
-	public void andar(JLabel y, KeyEvent e) {
+	public void andar(JLabel y, KeyEvent e, int i) {
 		
 		andando = new TimerTask() {
 
@@ -186,53 +213,97 @@ public class Animaciones extends ventana {
 					case 0:
 
 						andarcont = 1;
+						if (i==1){
 						icono = andar1;
 						y.setIcon(icono);
+						}
+						if (i==2){
+						icono = andar1_2;
+						y.setIcon(icono);
+						}
 
 						break;
 					case 1:
 						andarcont = 2;
-						icono = andar2;
-						y.setIcon(icono);
-
+						if (i==1){
+							icono = andar2;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar2_2;
+							y.setIcon(icono);
+							}
 						break;
 					case 2:
 						andarcont = 3;
-						icono = andar3;
-						y.setIcon(icono);
-
+						if (i==1){
+							icono = andar3;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar3_2;
+							y.setIcon(icono);
+							}
 						break;
 					case 3:
 						andarcont = 4;
-						icono = andar4;
-						y.setIcon(icono);
-
+						if (i==1){
+							icono = andar4;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar4_2;
+							y.setIcon(icono);
+							}
 						break;
 					case 4:
 						andarcont = 5;
-						icono = andar5;
-						y.setIcon(icono);
-
+						if (i==1){
+							icono = andar5;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar5_2;
+							y.setIcon(icono);
+							}
 						break;
 					case 5:
 
 						andarcont = 6;
-						icono = andar6;
-						y.setIcon(icono);
+						if (i==1){
+							icono = andar6;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar6_2;
+							y.setIcon(icono);
+							}
 						break;
 
 					case 6:
 
 						andarcont = 7;
-						icono = andar7;
-						y.setIcon(icono);
+						if (i==1){
+							icono = andar7;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar7_2;
+							y.setIcon(icono);
+							}
 						break;
 
 					case 7:
 
 						andarcont = 8;
-						icono = andar8;
-						y.setIcon(icono);
+						if (i==1){
+							icono = andar8;
+							y.setIcon(icono);
+							}
+							if (i==2){
+							icono = andar8_2;
+							y.setIcon(icono);
+							}
 						break;
 
 					case 8:
