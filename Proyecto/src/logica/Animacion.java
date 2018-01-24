@@ -15,7 +15,8 @@ public class Animacion {
 	public boolean downp2 = false;
 	public boolean fp2 = false;
 	public char tecla;
-	public boolean ListaMov[] ;
+	public boolean ListaMov1[] ;
+	public boolean ListaMov2[];
 
 	public void comprobarTeclas(KeyEvent e) {
 

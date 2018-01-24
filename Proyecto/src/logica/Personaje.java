@@ -1,3 +1,5 @@
+package logica;
+
 import javax.swing.JFrame;
 
 public class Personaje extends JFrame {

@@ -1,4 +1,4 @@
-package src;
+package logica;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
