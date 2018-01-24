@@ -28,7 +28,8 @@ public class VentanaJuego extends Animaciones   {
 	public Timer reloj2;
 	public TimerTask relcont;
 	public String z;
-	public int Xvida = 10;
+	public int Xvida1 = 10;
+	public int Xvida2 = 10;
 			
 	
 	
@@ -76,8 +77,14 @@ public class VentanaJuego extends Animaciones   {
 		JLabel reloj = new JLabel("0");
 		reloj.setForeground(Color.BLUE);
 		reloj.setFont(new Font("Trajan Pro", Font.BOLD | Font.ITALIC, 21));
-		reloj.setBounds(598, 11, 46, 35);
+		reloj.setBounds(561, 11, 46, 35);
 		frame.getContentPane().add(reloj);
+		
+		JLabel lblPlayer = new JLabel("player 2:");
+		lblPlayer.setForeground(Color.BLACK);
+		lblPlayer.setFont(new Font("Viner Hand ITC", Font.BOLD, 23));
+		lblPlayer.setBounds(654, 19, 136, 25);
+		frame.getContentPane().add(lblPlayer);
 	
 		JLabel lblNewLabel = new JLabel("player 1:");
 		lblNewLabel.setForeground(Color.BLACK);
@@ -88,10 +95,18 @@ public class VentanaJuego extends Animaciones   {
 		JLabel Vida = new JLabel("");
 		Vida.setForeground(Color.GREEN);
 		Vida.setBackground(Color.GREEN);
-		Vida.setVisible(true);
 		Vida.setOpaque(true);
-		Vida.setBounds(Xvida, 11, 530, 43);
+		Vida.setBounds(633, 11, 530, 43);
 		frame.getContentPane().add(Vida);
+		
+		JLabel vida2 = new JLabel("");
+		vida2.setForeground(Color.GREEN);
+		vida2.setBackground(Color.GREEN);
+		vida2.setVisible(true);
+		vida2.setOpaque(true);
+		vida2.setBounds(Xvida2, 11, 500, 43);
+		frame.getContentPane().add(vida2);
+		
 		
 		
 		personaje = new JLabel();
@@ -126,6 +141,10 @@ public class VentanaJuego extends Animaciones   {
 				if (e.getKeyChar() == 's') {
 					agacharse(personaje);
 				}
+				if (e.getKeyChar() == 'k') {
+					agacharse(personaje2);
+					
+				}
 				
 				if (e.getKeyChar() == 'd') {
 				andar(personaje, e);
@@ -155,7 +174,7 @@ public class VentanaJuego extends Animaciones   {
 				}
 				if (e.getKeyChar() == 'h') {
 					puñetazo(personaje2);
-					quitarVida(personaje,personaje2,Xvida,e);
+					quitarVida(personaje,personaje2,Xvida1,e);
 				}
 				
 			
@@ -163,6 +182,9 @@ public class VentanaJuego extends Animaciones   {
 			public void keyReleased(KeyEvent e) {
 				if (e.getKeyChar() == 'd') {
 					personaje.setIcon(quieto);
+				}
+				if (e.getKeyChar() == 'k') {
+					personaje2.setIcon(quieto);
 				}
 				if (e.getKeyChar() == 'j') {
 					personaje2.setIcon(quieto);
